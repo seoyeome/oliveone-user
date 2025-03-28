@@ -19,10 +19,6 @@ public enum ErrorType {
     }
 
     public BaseException throwException(Object... args) {
-        return new BaseException(
-            String.format(messageFormat, args),
-            status,
-            code
-        );
+        return new BaseException(this, String.format(this.getMessageFormat(), args));
     }
 } 
